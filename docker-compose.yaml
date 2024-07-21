@@ -1,0 +1,16 @@
+services:
+  stockpapertrading:
+    build:
+      context: ./        # Path to the Dockerfile for the backend
+      dockerfile: Dockerfile    # Dockerfile name if not 'Dockerfile'
+      args:
+        - REACT_APP_BACKEND_URL=http://localhost:8000
+        - MONGODB_URI=mongodb+srv://agagmahmoud:xGiowF7dffBIZmPa@cluster0.xrrtozz.mongodb.net/?retryWrites=true&w=majority
+        - API_KEY=iQmewMFHJY7lz3iha1WrBazQaikCkTZ45iGInxOW
+        - JWT_ENCRIPTION_KEY=FkdcFb5Dsa
+    ports:
+      - "8000:8000"             # Expose backend's port 3000
+    restart: always             # Restart policy
+    environment:
+      - PORT=8000
+
